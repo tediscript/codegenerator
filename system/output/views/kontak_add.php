@@ -7,9 +7,6 @@
     <body>
         <form action="<?php echo site_url() . '/kontak/add' ?>" method="POST">
             Nama:<br/>
-            <input type="text" name="kategori_id" value="<?php echo set_value('kategori_id'); ?>" /><br/>
-            <input type="text" name="nama" value="<?php echo set_value('nama'); ?>" /><br/>
-            <input type="text" name="parent_id" value="<?php echo set_value('parent_id'); ?>" /><br/>
             <input type="text" name="kontak_id" value="<?php echo set_value('kontak_id'); ?>" /><br/>
             <input type="text" name="instansi" value="<?php echo set_value('instansi'); ?>" /><br/>
             <input type="text" name="gelar_depan" value="<?php echo set_value('gelar_depan'); ?>" /><br/>

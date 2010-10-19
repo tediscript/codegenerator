@@ -14,21 +14,6 @@ class Kontak_importer extends Controller {
 
     function add() {
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('kategori_id', 'Kategori Id', '');
-        $this->form_validation->set_rules('nama', 'Nama', '');
-        $this->form_validation->set_rules('parent_id', 'Parent Id', '');
-        $this->form_validation->set_rules('kontak_id', 'Kontak Id', '');
-        $this->form_validation->set_rules('instansi', 'Instansi', '');
-        $this->form_validation->set_rules('gelar_depan', 'Gelar Depan', '');
-        $this->form_validation->set_rules('nama', 'Nama', '');
-        $this->form_validation->set_rules('gelar_belakang', 'Gelar Belakang', '');
-        $this->form_validation->set_rules('jabatan', 'Jabatan', '');
-        $this->form_validation->set_rules('alamat', 'Alamat', '');
-        $this->form_validation->set_rules('telp', 'Telp', '');
-        $this->form_validation->set_rules('faks', 'Faks', '');
-        $this->form_validation->set_rules('handphone', 'Handphone', '');
-        $this->form_validation->set_rules('email', 'Email', '');
-        $this->form_validation->set_rules('temp', 'Temp', '');
         $this->form_validation->set_rules('kontak_id', 'Kontak Id', '');
         $this->form_validation->set_rules('instansi', 'Instansi', '');
         $this->form_validation->set_rules('nama', 'Nama', '');
@@ -42,21 +27,6 @@ class Kontak_importer extends Controller {
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('kontak_importer_add');
         } else {
-            $kontak_importer['kategori_id'] = $this->input->post('kategori_id');
-            $kontak_importer['nama'] = $this->input->post('nama');
-            $kontak_importer['parent_id'] = $this->input->post('parent_id');
-            $kontak_importer['kontak_id'] = $this->input->post('kontak_id');
-            $kontak_importer['instansi'] = $this->input->post('instansi');
-            $kontak_importer['gelar_depan'] = $this->input->post('gelar_depan');
-            $kontak_importer['nama'] = $this->input->post('nama');
-            $kontak_importer['gelar_belakang'] = $this->input->post('gelar_belakang');
-            $kontak_importer['jabatan'] = $this->input->post('jabatan');
-            $kontak_importer['alamat'] = $this->input->post('alamat');
-            $kontak_importer['telp'] = $this->input->post('telp');
-            $kontak_importer['faks'] = $this->input->post('faks');
-            $kontak_importer['handphone'] = $this->input->post('handphone');
-            $kontak_importer['email'] = $this->input->post('email');
-            $kontak_importer['temp'] = $this->input->post('temp');
             $kontak_importer['kontak_id'] = $this->input->post('kontak_id');
             $kontak_importer['instansi'] = $this->input->post('instansi');
             $kontak_importer['nama'] = $this->input->post('nama');
@@ -89,21 +59,6 @@ class Kontak_importer extends Controller {
             $this->load->model('Kontak_importer_model');
 
             $this->load->library('form_validation');
-            $this->form_validation->set_rules('kategori_id', 'Kategori Id', '');
-            $this->form_validation->set_rules('nama', 'Nama', '');
-            $this->form_validation->set_rules('parent_id', 'Parent Id', '');
-            $this->form_validation->set_rules('kontak_id', 'Kontak Id', '');
-            $this->form_validation->set_rules('instansi', 'Instansi', '');
-            $this->form_validation->set_rules('gelar_depan', 'Gelar Depan', '');
-            $this->form_validation->set_rules('nama', 'Nama', '');
-            $this->form_validation->set_rules('gelar_belakang', 'Gelar Belakang', '');
-            $this->form_validation->set_rules('jabatan', 'Jabatan', '');
-            $this->form_validation->set_rules('alamat', 'Alamat', '');
-            $this->form_validation->set_rules('telp', 'Telp', '');
-            $this->form_validation->set_rules('faks', 'Faks', '');
-            $this->form_validation->set_rules('handphone', 'Handphone', '');
-            $this->form_validation->set_rules('email', 'Email', '');
-            $this->form_validation->set_rules('temp', 'Temp', '');
             $this->form_validation->set_rules('kontak_id', 'Kontak Id', '');
             $this->form_validation->set_rules('instansi', 'Instansi', '');
             $this->form_validation->set_rules('nama', 'Nama', '');
@@ -118,21 +73,6 @@ class Kontak_importer extends Controller {
                 $data['kontak_importer'] = $this->Kontak_importer_model->find_one($kontak_importer_query);
                 $this->load->view('kontak_importer_edit', $data);
             } else {
-                $kontak_importer['kategori_id'] = $this->input->post('kategori_id');
-                $kontak_importer['nama'] = $this->input->post('nama');
-                $kontak_importer['parent_id'] = $this->input->post('parent_id');
-                $kontak_importer['kontak_id'] = $this->input->post('kontak_id');
-                $kontak_importer['instansi'] = $this->input->post('instansi');
-                $kontak_importer['gelar_depan'] = $this->input->post('gelar_depan');
-                $kontak_importer['nama'] = $this->input->post('nama');
-                $kontak_importer['gelar_belakang'] = $this->input->post('gelar_belakang');
-                $kontak_importer['jabatan'] = $this->input->post('jabatan');
-                $kontak_importer['alamat'] = $this->input->post('alamat');
-                $kontak_importer['telp'] = $this->input->post('telp');
-                $kontak_importer['faks'] = $this->input->post('faks');
-                $kontak_importer['handphone'] = $this->input->post('handphone');
-                $kontak_importer['email'] = $this->input->post('email');
-                $kontak_importer['temp'] = $this->input->post('temp');
                 $kontak_importer['kontak_id'] = $this->input->post('kontak_id');
                 $kontak_importer['instansi'] = $this->input->post('instansi');
                 $kontak_importer['nama'] = $this->input->post('nama');

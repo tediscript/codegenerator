@@ -14,9 +14,6 @@ class Kontak extends Controller {
 
     function add() {
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('kategori_id', 'Kategori Id', '');
-        $this->form_validation->set_rules('nama', 'Nama', '');
-        $this->form_validation->set_rules('parent_id', 'Parent Id', '');
         $this->form_validation->set_rules('kontak_id', 'Kontak Id', '');
         $this->form_validation->set_rules('instansi', 'Instansi', '');
         $this->form_validation->set_rules('gelar_depan', 'Gelar Depan', '');
@@ -32,9 +29,6 @@ class Kontak extends Controller {
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('kontak_add');
         } else {
-            $kontak['kategori_id'] = $this->input->post('kategori_id');
-            $kontak['nama'] = $this->input->post('nama');
-            $kontak['parent_id'] = $this->input->post('parent_id');
             $kontak['kontak_id'] = $this->input->post('kontak_id');
             $kontak['instansi'] = $this->input->post('instansi');
             $kontak['gelar_depan'] = $this->input->post('gelar_depan');
@@ -69,9 +63,6 @@ class Kontak extends Controller {
             $this->load->model('Kontak_model');
 
             $this->load->library('form_validation');
-            $this->form_validation->set_rules('kategori_id', 'Kategori Id', '');
-            $this->form_validation->set_rules('nama', 'Nama', '');
-            $this->form_validation->set_rules('parent_id', 'Parent Id', '');
             $this->form_validation->set_rules('kontak_id', 'Kontak Id', '');
             $this->form_validation->set_rules('instansi', 'Instansi', '');
             $this->form_validation->set_rules('gelar_depan', 'Gelar Depan', '');
@@ -88,9 +79,6 @@ class Kontak extends Controller {
                 $data['kontak'] = $this->Kontak_model->find_one($kontak_query);
                 $this->load->view('kontak_edit', $data);
             } else {
-                $kontak['kategori_id'] = $this->input->post('kategori_id');
-                $kontak['nama'] = $this->input->post('nama');
-                $kontak['parent_id'] = $this->input->post('parent_id');
                 $kontak['kontak_id'] = $this->input->post('kontak_id');
                 $kontak['instansi'] = $this->input->post('instansi');
                 $kontak['gelar_depan'] = $this->input->post('gelar_depan');

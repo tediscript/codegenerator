@@ -9,9 +9,6 @@
         <table border="1">
             <thead>
                 <tr>
-                    <th>Kategori Id</th>
-                    <th>Nama</th>
-                    <th>Parent Id</th>
                     <th>Kontak Id</th>
                     <th>Instansi</th>
                     <th>Gelar Depan</th>
@@ -31,9 +28,6 @@
             <tbody>
                 <?php foreach ($kontak as $item): ?>
                     <tr>
-                        <td><?php echo $item['kategori_id']; ?></td>
-                        <td><?php echo $item['nama']; ?></td>
-                        <td><?php echo $item['parent_id']; ?></td>
                         <td><?php echo $item['kontak_id']; ?></td>
                         <td><?php echo $item['instansi']; ?></td>
                         <td><?php echo $item['gelar_depan']; ?></td>

@@ -31,6 +31,7 @@ class {ucfirst_table_name}_model extends Model {
         foreach ($data_query as $key => $value) {
             $this->db->where($key, $value);
         }
+        $this->db->limit($limit, $offset);
         $result = array();
         $query = $this->db->get($this->table_name);
         foreach ($query->result_array() as $row) {

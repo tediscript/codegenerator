@@ -13,6 +13,7 @@ class Welcome extends Controller {
         $this->load->database();
         $tables = $this->db->list_tables();
         foreach ($tables as $table) {
+            $data = array();
             //generate model
             $data['table_name'] = $table;
             $data['ucfirst_table_name'] = ucfirst($table);
@@ -23,18 +24,18 @@ class Welcome extends Controller {
 
             //generate controller
             $data['primary_key'] = '';
-            $data['table_fields'] = array();
+            $table_fields = array();
             $fields = $this->db->field_data($table);
             foreach ($fields as $field) {
                 $table_fields[] = array('table_field' => $field->name, 'table_field_humanized' => humanize($field->name));
                 if ($field->primary_key) {
                     $data['primary_key'] = $field->name;
                 }
-                $data['table_fields_add1'] = $table_fields;
-                $data['table_fields_add2'] = $table_fields;
-                $data['table_fields_edit1'] = $table_fields;
-                $data['table_fields_edit2'] = $table_fields;
             }
+            $data['table_fields_add1'] = $table_fields;
+            $data['table_fields_add2'] = $table_fields;
+            $data['table_fields_edit1'] = $table_fields;
+            $data['table_fields_edit2'] = $table_fields;
             $controller_source = $this->parser->parse('controller_template', $data, TRUE);
             write_file(BASEPATH . 'output/controllers/' . $table . '.php', $controller_source);
 
