@@ -5,7 +5,8 @@
         <title></title>
     </head>
     <body>
-        <a href="{php_open} echo site_url() . '/{table_name}/add' {php_close}">Kategori Add</a>
+        <a href="{php_open} echo site_url() . '/{table_name}/add' {php_close}">Kategori Add</a><br/>
+        {php_open} echo $pagination; {php_close}
         <table border="1">
             <thead>
                 <tr>{table_fields_view1}

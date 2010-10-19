@@ -6,9 +6,16 @@ class {ucfirst_table_name} extends Controller {
         parent::Controller();
     }
 
-    function index() {
+    function index($offset = 0) {
+        $limit = 25;
         $this->load->model('{ucfirst_table_name}_model');
-        $data['{table_name}'] = $this->{ucfirst_table_name}_model->find();
+        $this->load->library('pagination');
+        $config['base_url'] = site_url() . '/{table_name}/index/';
+        $config['total_rows'] = $this->{ucfirst_table_name}_model->total_rows();
+        $config['per_page'] = $limit;
+        $this->pagination->initialize($config);
+        $data['pagination'] = $this->pagination->create_links();
+        $data['{table_name}'] = $this->{ucfirst_table_name}_model->find(array(), $limit, $offset);
         $this->load->view('{table_name}', $data);
     }
 
