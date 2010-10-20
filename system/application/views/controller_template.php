@@ -36,7 +36,7 @@ class {ucfirst_table_name} extends Controller {
         if ($id) {
             ${table_name}_query['{primary_key}'] = $id;
             $this->load->model('{ucfirst_table_name}_model');
-            $this->Kategori_model->delete(${table_name}_query);
+            $this->{ucfirst_table_name}_model->delete(${table_name}_query);
         } else {
             redirect('{table_name}');
         }
